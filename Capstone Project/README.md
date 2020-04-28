@@ -66,4 +66,12 @@ The cluster can be started by running the **start_emr_cluster.py** script withou
 
   `python start_emr_cluster.py`
 
-The script uses a cluster.cfg file to access the AWS key and secret for authorization.
+The script uses a cluster.cfg file to access the AWS key and secret for authorization. The script was created using the tutorial [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-gs.html)
+If it is the first time using the AWS EMR service, the default emr roles must be set up before running the script. Otherwise the script will raise an error.
+
+you can use two different approaches:
+
+  1. Use the manual approch by creating a cluster through the web application
+  2. Use the AWS CLI command line and type in `$ aws emr create-default-roles`
+
+To use the AWS CLI Tool you can install it directly from the amazon website [here](https://awscli.amazonaws.com/AWSCLIV2.msi)
