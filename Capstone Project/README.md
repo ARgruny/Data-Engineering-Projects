@@ -1,4 +1,4 @@
-![Top Banner](Capstone Project/Images/top banner.jpg)
+![Top Banner](https://github.com/ARgruny/Data-Engineering-Projects/blob/master/Capstone%20Project/Images/top%20banner.png)
 
 
 # Stock Market Analytics Database
