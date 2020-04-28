@@ -1,3 +1,6 @@
+![Top Banner](Capstone Project/Images/top banner.jpg)
+
+
 # Stock Market Analytics Database
 
 ## Open Capstone Project for the Data Engineering Nanodegree
