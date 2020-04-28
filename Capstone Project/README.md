@@ -12,3 +12,10 @@ Target of this project is to create a database and automated etl pipeline for st
 To create a scalable and stable infrastructure the AWS cloud services will be utilized. All parts of the infrastructure are shown in the graph below:
 
 ![Infrastructure](https://github.com/ARgruny/Data-Engineering-Projects/blob/master/Capstone%20Project/Images/infrastructure.png)
+
+The infrastructure will work as follows:
+1. An EC2 instance will query the yahoo finance and New York Times API for the raw data.
+2. The raw data will be stored in AWS S3 Storage
+3. Airflow will be used to schedule and host the ETL pipelines. It will send ETL tasks to an scalable EMR cluster
+4. the EMR cluster transforms the data and loads it into Redshift
+5. Redshift will function as the data warehouse
