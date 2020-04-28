@@ -1,7 +1,5 @@
-![Top Banner](https://github.com/ARgruny/Data-Engineering-Projects/blob/master/Capstone%20Project/Images/top%20banner.png)
-
-
 # Stock Market Analytics Database
+![Top Banner](https://github.com/ARgruny/Data-Engineering-Projects/blob/master/Capstone%20Project/Images/top%20banner.png)
 
 ## Scope of the Project
 
@@ -41,11 +39,31 @@ The YAML file is hosted in a seperated AWS S3 bucket.
 The original file can be found [here](https://s3.amazonaws.com/aws-bigdata-blog/artifacts/airflow.livy.emr/airflow.yaml).
 
 Some parts of the file were changed because they are not needed in this project.
-For example the git clone steps to import airflow DAG's or the download of the Movielens dataset.
-The airflow config file was also changed to set the load example dags variable to **False**.
-With this airflow will be initialized clean without any DAG's
+For example the git clone steps to import Airflow DAG's or the download of the Movielens dataset.
+The Airflow config file was also changed to set the load example dags variable to **False**.
+With this Airflow will be initialized clean without any DAG's
+
+If more input parameters are added to the YAML file, the **start_airflow_instance** script must be updated to address those additional parameters.
+To get a better understanding of this, look at the **launch_stack** function in the script.
 
 In addition a **cluster.cfg** file is needed where the aws key and secret will be stored as well as some data for later setup steps corresponding to the Redshift cluster.
 **Please keep in mind not to host your actual aws key and secret on github.**
 
-###
+The repository will contain empty YAML and config file for security reasons.
+The Script uses the AWS Cloudformation services to set up the Airflow infrastructure.
+
+To start the airflow scheduler connect to the EC2 instance with putty or the command line an use the `$ airflow scheduler` command.
+
+### EMR Cluster
+
+For the EMR cluster the following hardware is used:
+
+  `c5.xlarge
+  4 vCore, 8 GiB Memory,
+  Storage: 64 GiB`
+
+The cluster can be started by running the **start_emr_cluster.py** script without
+
+  `python start_emr_cluster.py`
+
+The script uses a cluster.cfg file to access the AWS key and secret for authorization.
