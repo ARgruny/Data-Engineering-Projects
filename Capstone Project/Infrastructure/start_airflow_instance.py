@@ -29,15 +29,15 @@ def launch_stack(template, region):
       Parameters=[
                {
                'ParameterKey': 'KeyName',
-               'ParameterValue': 'airflow-web',
+               'ParameterValue': 'KeyName', # use the actual string value here
                },
                {
                'ParameterKey': 'S3BucketName',
-               'ParameterValue': 'airflow-backend-bucket'
+               'ParameterValue': 'S3BucketName' # use the actual string value here
                },
                {
                'ParameterKey': 'DBPassword',
-               'ParameterValue': 'airflow28082013'
+               'ParameterValue': 'DBPassword' # use the actual string value here
                }
               ],
       Capabilities=capabilities)
@@ -50,7 +50,7 @@ def launch_stack(template, region):
 def main():
     config_file = 'cluster.cfg'
     get_config_data(config_file)
-    template_url = 'https://infrastructure-airflow.s3.eu-central-1.amazonaws.com/airflow.yaml'
+    template_url = 'YOUR S3 URL' #Url to your YAML file
     region='us-east-1'
     launch_stack(template_url, region)
 
