@@ -10,3 +10,5 @@ Target of this project is to create a database and automated etl pipeline for st
 
 ### Infrastructure
 To create a scalable and stable infrastructure the AWS cloud services will be utilized. All parts of the infrastructure are shown in the graph below:
+
+![Infrastructure](https://github.com/ARgruny/Data-Engineering-Projects/blob/master/Capstone%20Project/Images/infrastructure.png)
