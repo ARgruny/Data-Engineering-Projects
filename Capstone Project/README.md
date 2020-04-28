@@ -28,13 +28,13 @@ To enable a better recreation of the project most steps of setting up the infras
 
 For the Airflow instance the following hardware is used:
 
-  m5.xlarge
+  `m5.xlarge
   4 vCore, 16 GiB Memory
-  Storage: 64 GiB
+  Storage: 64 GiB`
 
 The infrastructure can be set up by running the **start_airflow_instance.py** script with
 
-  python start_airflow_instance.py
+  `python start_airflow_instance.py`
 
 The script uses a YAML file in which the installation and structure of the EC2 instance is described. The YAML file is hosted in a seperated AWS S3 bucket.
 you can find the original file [here](https://s3.amazonaws.com/aws-bigdata-blog/artifacts/airflow.livy.emr/airflow.yaml)
