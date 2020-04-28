@@ -38,3 +38,11 @@ The infrastructure can be set up by running the **start_airflow_instance.py** sc
 
 The script uses a YAML file in which the installation and structure of the EC2 instance is described. The YAML file is hosted in a seperated AWS S3 bucket.
 you can find the original file [here](https://s3.amazonaws.com/aws-bigdata-blog/artifacts/airflow.livy.emr/airflow.yaml)
+Some parts of the file were changed because they are not needed in this project.
+For example the git clone steps to import airflow DAG's or the download of the Movielens dataset.
+The airflow config file was also changed to set the load example dags variable to **False**. With this airflow will be initialized clean without any DAG's
+
+In addition a **cluster.cfg** file is needed where the aws key and secret will be stored as well as some data for later setup steps corresponding to the Redshift cluster.
+**Please keep in mind not to host your actual aws key and secret on github.**
+
+###
