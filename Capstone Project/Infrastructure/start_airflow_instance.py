@@ -50,7 +50,7 @@ def launch_stack(template, region):
 def main():
     config_file = 'cluster.cfg'
     get_config_data(config_file)
-    template_url = 'https://infrastructure-airflow.s3.eu-central-1.amazonaws.com/airflow.yaml'
+    template_url = 'YOUR S3 URL' #Url to your YAML file
     region='us-east-1'
     launch_stack(template_url, region)
 
