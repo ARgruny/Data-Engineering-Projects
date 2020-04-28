@@ -81,9 +81,9 @@ def create_emr_bucket(region, name):
 
 def main():
     region = 'us-east-1'
-    bucket_name = 'airflow-emr-cluster-bucket'
-    key_name = 'emr-cluster-key'
-    subnet = 'subnet-7cbc3e31' # us-east-1a
+    bucket_name = 'BUCKET NAME'
+    key_name = 'KEY PAIR NAME'
+    subnet = 'SUBNET' # i used the subnet for us-east-1a
     
     # create bucket
     create_emr_bucket(region, bucket_name)
