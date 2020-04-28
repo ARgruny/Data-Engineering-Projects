@@ -29,15 +29,15 @@ def launch_stack(template, region):
       Parameters=[
                {
                'ParameterKey': 'KeyName',
-               'ParameterValue': 'airflow-web',
+               'ParameterValue': 'KeyName', # use the actual string value here
                },
                {
                'ParameterKey': 'S3BucketName',
-               'ParameterValue': 'airflow-backend-bucket'
+               'ParameterValue': 'S3BucketName' # use the actual string value here
                },
                {
                'ParameterKey': 'DBPassword',
-               'ParameterValue': 'airflow28082013'
+               'ParameterValue': 'DBPassword' # use the actual string value here
                }
               ],
       Capabilities=capabilities)
