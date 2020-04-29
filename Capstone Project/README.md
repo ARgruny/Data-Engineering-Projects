@@ -22,8 +22,7 @@ To enable a better recreation of the project most steps of setting up the infras
 
 ## Infrastructure Setup
 
-### Airflow Instance
-
+### 1. Airflow Instance
 For the Airflow instance the following hardware is used:
 
   `m5.xlarge
@@ -54,15 +53,14 @@ The Script uses the AWS Cloudformation services to set up the Airflow infrastruc
 
 To start the airflow scheduler connect to the EC2 instance with putty or the command line an use the `$ airflow scheduler` command.
 
-### EMR Cluster
-
+### 2. EMR Cluster
 For the EMR cluster the following hardware is used:
 
   `c5.xlarge
   4 vCore, 8 GiB Memory,
   Storage: 64 GiB`
 
-The cluster can be started by running the **start_emr_cluster.py** script without
+The cluster can be started by running the **start_emr_cluster.py** script with
 
   `python start_emr_cluster.py`
 
@@ -71,7 +69,32 @@ If it is the first time using the AWS EMR service, the default emr roles must be
 
 you can use two different approaches:
 
-  1. Use the manual approch by creating a cluster through the web application
+  1. Use the manual approch by creating a first cluster through the web application
   2. Use the AWS CLI command line and type in `$ aws emr create-default-roles`
 
 To use the AWS CLI Tool you can install it directly from the amazon website [here](https://awscli.amazonaws.com/AWSCLIV2.msi)
+
+### 3. Redshift Cluster
+The Redshift cluster has the following hardware
+
+  `dc2.large, 4 Nodes`
+
+Use the two .cfg config files and insert the configuration of the DWH. The `cluster.cfg` is used to start and set up the AWS resources. The `dwh.cfg` file is used for the ETL process. The **start_cluster.py** script will write back into the `dwh.cfg` file so make sure that no field is deleted, even the empty HOST and ARN field.
+
+One script is provided to control the DWH infrstructure. Use the following commands to start up the Redshift cluster
+
+  `python start_cluster.py`
+
+you can change the hardware by changing the number of nodes and the node type in the cluster.cfg file
+
+## Describe and gather Database
+
+### S&P 500 Stock List
+A list of stocks with the ticker code of each stock in the S&P 500. The data is from the official wiki of the S&P 500.
+This extract will be used to query the yahoo finance API and gather most of the data. It contains 505 stocks and represents only a small part of the actual stock market.
+But it should be enough to test the infrstructure and ETL pipelines.
+
+#### Data Columns
+- Ticker: char code of the stock. this will be used in the yahoo API.
+- Name: Name of the Stock
+- Sector: Sector or branch of the company
