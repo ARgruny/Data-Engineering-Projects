@@ -87,12 +87,12 @@ One script is provided to control the DWH infrstructure. Use the following comma
 
 you can change the hardware by changing the number of nodes and the node type in the cluster.cfg file
 
-## Describe and gather Database
+## Describe and gather Data
 
 ### S&P 500 Stock List
-A list of stocks with the ticker code of each stock in the S&P 500. The data is from the official wiki of the S&P 500.
+A list of stocks with the ticker code of each stock in the S&P 500. The data is from the official [wiki](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) of the S&P 500.
 This extract will be used to query the yahoo finance API and gather most of the data. It contains 505 stocks and represents only a small part of the actual stock market.
-But it should be enough to test the infrstructure and ETL pipelines.
+But it should be enough to test the infrastructure and ETL pipelines.
 
 #### Data Columns
 - Ticker: char code of the stock. this will be used in the yahoo API.
